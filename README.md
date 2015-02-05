@@ -1,6 +1,7 @@
-# Passport-Facebook-Token
+# Passport-Facebook-Code
 
 This repository is a fork of [passport-facebook-token](https://github.com/drudge/passport-facebook-token)
+
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Facebook](http://www.facebook.com/)
 access tokens using the OAuth 2.0 API.
@@ -22,7 +23,7 @@ Add to package.json dependencies
 #### Configure Strategy
 
 The Facebook authentication strategy authenticates users using a Facebook
-account and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which
+account and OAuth 2.0 token.  The strategy requires a `verify` callback, which
 accepts these credentials and calls `done` providing a user, as well as
 `options` specifying a app ID and app secret.
 
@@ -32,7 +33,7 @@ passport.use(new FacebookTokenStrategy({
     clientSecret: FACEBOOK_APP_SECRET
     redirectURL: 'FACEBOOK_REDIRECTURL'
   },
-  function(accessToken, refreshToken, profile, done) {
+  function(code, refreshToken, profile, done) {
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
       return done(err, user);
     });
