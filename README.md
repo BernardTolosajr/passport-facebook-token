@@ -1,5 +1,7 @@
 # Passport-Facebook-Token
 
+This repository is a fork of [passport-facebook-token](https://github.com/drudge/passport-facebook-token)
+
 [Passport](http://passportjs.org/) strategy for authenticating with [Facebook](http://www.facebook.com/)
 access tokens using the OAuth 2.0 API.
 
