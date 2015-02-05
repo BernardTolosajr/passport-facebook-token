@@ -11,7 +11,9 @@ unobtrusively integrated into any application or framework that supports
 
 ## Installation
 
-    $ npm install passport-facebook-token
+Add to package.json dependencies
+
+"passport-facebook-token": "git+ssh://git@github.com:BernardTolosajr/passport-facebook-token.git"
 
 ## Usage
 
@@ -26,6 +28,7 @@ accepts these credentials and calls `done` providing a user, as well as
 passport.use(new FacebookTokenStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET
+    redirectURL: 'FACEBOOK_REDIRECTURL'
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
